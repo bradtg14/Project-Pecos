@@ -42,3 +42,40 @@
 		<h1>About Pecos Pit</h1>
 		<p> Pit barbeque purists</p>
 </div>
+  
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-y9d9e3kABKh1wYoP9FIcEVh6RRNH5Y4&sensor=false">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var myLatlng = new google.maps.LatLng(47.5821097, -122.3338412);
+        var mapOptions = {
+          zoom: 17,
+          center: myLatlng
+        }
+        
+        var map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+        
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: 'Hello World!'
+        });
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"/>
+  </body>
+</html>
